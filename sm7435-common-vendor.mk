@@ -952,7 +952,6 @@ PRODUCT_PACKAGES += \
     power_off_alarm \
     poweropt-service \
     ppd \
-    qcom-system-daemon \
     qdcmss \
     qesdk-manager \
     qmi_motext_hook \
