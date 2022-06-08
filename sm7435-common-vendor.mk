@@ -935,7 +935,6 @@ PRODUCT_PACKAGES += \
     init.qti.media \
     init.qti.qcv \
     ipacm-diag \
-    irsc_util \
     ks \
     loadalgo \
     loc_launcher \
