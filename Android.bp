@@ -17818,33 +17818,6 @@ sh_binary {
 }
 
 cc_prebuilt_binary {
-    name: "ipacm-diag",
-    owner: "motorola",
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/bin/ipacm-diag",
-            ],
-            shared_libs: [
-                "libdiag",
-                "libcutils",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    strip: {
-        none: true,
-    },
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_binary {
     name: "ks",
     owner: "motorola",
     target: {
