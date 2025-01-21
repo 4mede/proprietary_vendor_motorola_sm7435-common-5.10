@@ -446,7 +446,6 @@ PRODUCT_PACKAGES += \
     libloc_mq_client \
     libloc_qwes_iface \
     libloc_ril_client \
-    libloc_socket \
     libloc_util \
     liblocationservice \
     liblocationservice_glue \
