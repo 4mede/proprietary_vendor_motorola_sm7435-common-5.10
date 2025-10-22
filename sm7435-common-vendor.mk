@@ -98,7 +98,6 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/sm7435-common/proprietary/vendor/etc/init/hw/init.qti.kernel.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.qti.kernel.rc \
     vendor/motorola/sm7435-common/proprietary/vendor/etc/init/ims_rtp_daemon.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/ims_rtp_daemon.rc \
     vendor/motorola/sm7435-common/proprietary/vendor/etc/init/imsdaemon.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/imsdaemon.rc \
-    vendor/motorola/sm7435-common/proprietary/vendor/etc/init/init.embmssl_server.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.embmssl_server.rc \
     vendor/motorola/sm7435-common/proprietary/vendor/etc/init/init.qdmastats.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.qdmastats.rc \
     vendor/motorola/sm7435-common/proprietary/vendor/etc/init/init.qti.media.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.qti.media.rc \
     vendor/motorola/sm7435-common/proprietary/vendor/etc/init/init.qti.qcv.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.qti.qcv.rc \
@@ -331,7 +330,6 @@ PRODUCT_PACKAGES += \
     libdsutils \
     libeai_fixed \
     libeai_float \
-    libembmsservice \
     libengineplugin \
     libesepmconfig \
     libeva \
@@ -621,8 +619,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.dpmservice@1.0_vendor \
     vendor.qti.hardware.dpmservice@1.1_vendor \
     vendor.qti.hardware.dsp@1.0 \
-    vendor.qti.hardware.embmssl@1.0 \
-    vendor.qti.hardware.embmssl@1.1 \
     vendor.qti.hardware.fm@1.0 \
     vendor.qti.hardware.mwqemadapter@1.0 \
     vendor.qti.hardware.qccsyshal@1.0_vendor \
@@ -849,7 +845,6 @@ PRODUCT_PACKAGES += \
     dpmQmiMgr \
     dspservice \
     edgnss-daemon \
-    embmsslServer \
     engine-service \
     garden_app \
     android.hardware.bluetooth@1.0-service-qti \
