@@ -847,7 +847,6 @@ PRODUCT_PACKAGES += \
     CneApp \
     IWlanService \
     TimeService \
-    EuiccPartnerApp \
     uimgbaservice \
     EuiccGoogle \
     ImsRcsService \
