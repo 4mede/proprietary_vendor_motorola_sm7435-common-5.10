@@ -984,7 +984,7 @@ cc_prebuilt_library_shared {
                 "libhidlbase",
                 "liblog",
                 "libutils",
-                "vendor.qti.hardware.qccvndhal@1.0",
+                "vendor.qti.hardware.qccvndhal@1.0_vendor",
                 "libc++",
                 "libc",
                 "libm",
@@ -3542,7 +3542,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libgnsspps",
+    name: "libgarden",
     owner: "motorola",
     strip: {
         none: true,
@@ -3550,13 +3550,100 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/vendor/lib64/libgnsspps.so",
+                "proprietary/vendor/lib64/libgarden.so",
+            ],
+            shared_libs: [
+                "libgps.utils",
+                "libloc_core",
+                "liblocation_api",
+                "liblog",
+                "libdataitems",
+                "libutils",
+                "libbase",
+                "libbinder_ndk",
+                "android.hardware.gnss-V1-ndk",
+                "android.hardware.gnss@1.0",
+                "android.hardware.gnss@1.1",
+                "android.hardware.gnss@2.0",
+                "android.hardware.gnss@2.1",
+                "android.hardware.gnss.visibility_control@1.0",
+                "android.hardware.gnss.measurement_corrections@1.0",
+                "android.hardware.gnss.measurement_corrections@1.1",
+                "libhidlbase",
+                "vendor.qti.gnss-V5-ndk_platform",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libgarden_haltests_e2e",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libgarden_haltests_e2e.so",
+            ],
+            shared_libs: [
+                "libgarden",
+                "libgps.utils",
+                "libloc_core",
+                "liblocation_api",
+                "liblog",
+                "libutils",
+                "libbase",
+                "libbinder_ndk",
+                "android.hardware.gnss-V1-ndk",
+                "android.hardware.gnss@1.0",
+                "android.hardware.gnss@1.1",
+                "android.hardware.gnss@2.0",
+                "android.hardware.gnss@2.1",
+                "android.hardware.gnss.visibility_control@1.0",
+                "android.hardware.gnss.measurement_corrections@1.0",
+                "android.hardware.gnss.measurement_corrections@1.1",
+                "vendor.qti.gnss-V5-ndk_platform",
+                "libhidlbase",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libgdtap",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libgdtap.so",
             ],
             shared_libs: [
                 "libutils",
                 "libcutils",
                 "libgps.utils",
                 "liblog",
+                "libloc_core",
+                "libizat_core",
+                "liblbs_core",
                 "libc++",
                 "libc",
                 "libm",
@@ -7473,35 +7560,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libqppe",
-    owner: "motorola",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libqppe.so",
-            ],
-            shared_libs: [
-                "libgps.utils",
-                "liblog",
-                "liblocdiagiface",
-                "libdiag",
-                "libutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libqrtr",
     owner: "motorola",
     strip: {
@@ -8723,6 +8781,37 @@ cc_prebuilt_library_shared {
                 "libqmi_common_so",
                 "libmdmdetect",
                 "libperipheral_client",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libsynergy_loc_api",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libsynergy_loc_api.so",
+            ],
+            shared_libs: [
+                "libutils",
+                "libcutils",
+                "libqmi_cci",
+                "libqmi_common_so",
+                "libloc_core",
+                "libgps.utils",
+                "liblog",
                 "libc++",
                 "libc",
                 "libm",
@@ -11256,31 +11345,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.qti.gnss-V3-ndk_platform",
-    owner: "motorola",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/vendor.qti.gnss-V3-ndk_platform.so",
-            ],
-            shared_libs: [
-                "libbinder_ndk",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "vendor.qti.gnss-V5-ndk_platform",
     owner: "motorola",
     strip: {
@@ -12251,7 +12315,7 @@ cc_prebuilt_library_shared {
                 "libfmq",
                 "libcutils",
                 "liblog",
-                "vendor.qti.hardware.qccvndhal@1.0",
+                "vendor.qti.hardware.qccvndhal@1.0_vendor",
                 "libc++",
                 "libc",
                 "libm",
@@ -12265,7 +12329,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.qccvndhal@1.0",
+    name: "vendor.qti.hardware.qccvndhal@1.0_vendor",
+    stem: "vendor.qti.hardware.qccvndhal@1.0",
     owner: "motorola",
     strip: {
         none: true,
@@ -15280,6 +15345,45 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libqcc",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libqcc.so",
+            ],
+            shared_libs: [
+                "libcurl",
+                "libssl",
+                "libcrypto",
+                "libcutils",
+                "liblog",
+                "libutils",
+                "libbase",
+                "libfmq",
+                "libhidlbase",
+                "libbinder_ndk",
+                "vendor.qti.hardware.qccvndhal@1.0",
+                "vendor.qti.hardware.qccsyshal@1.2",
+                "android.hardware.common-V2-ndk",
+                "vendor.qti.qccvndhal_aidl-V1-ndk",
+                "vendor.qti.qccsyshal_aidl-V1-ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libqcc_file_agent_sys",
     owner: "motorola",
     strip: {
@@ -15293,6 +15397,85 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "libcutils",
                 "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libqccdme",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libqccdme.so",
+            ],
+            shared_libs: [
+                "libcurl",
+                "libssl",
+                "libcrypto",
+                "libcutils",
+                "liblog",
+                "libutils",
+                "libbase",
+                "libfmq",
+                "libhidlbase",
+                "libbinder",
+                "libbinder_ndk",
+                "vendor.qti.hardware.qccvndhal@1.0",
+                "vendor.qti.hardware.qccsyshal@1.2",
+                "android.hardware.common-V2-ndk",
+                "vendor.qti.qccvndhal_aidl-V1-ndk",
+                "vendor.qti.qccsyshal_aidl-V1-ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libqccfileservice",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libqccfileservice.so",
+            ],
+            shared_libs: [
+                "libcurl",
+                "libssl",
+                "libcrypto",
+                "libcutils",
+                "liblog",
+                "libutils",
+                "libbase",
+                "libfmq",
+                "libhidlbase",
+                "libbinder_ndk",
+                "vendor.qti.hardware.qccvndhal@1.0",
+                "vendor.qti.hardware.qccsyshal@1.2",
+                "android.hardware.common-V2-ndk",
+                "vendor.qti.qccvndhal_aidl-V1-ndk",
+                "vendor.qti.qccsyshal_aidl-V1-ndk",
                 "libc++",
                 "libc",
                 "libm",
@@ -16111,6 +16294,34 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.qccvndhal@1.0",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/vendor.qti.hardware.qccvndhal@1.0.so",
+            ],
+            shared_libs: [
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "vendor.qti.hardware.wifidisplaysession@1.0",
     owner: "motorola",
     strip: {
@@ -16221,6 +16432,60 @@ cc_prebuilt_library_shared {
     system_ext_specific: true,
 }
 
+cc_prebuilt_library_shared {
+    name: "vendor.qti.qccsyshal_aidl-V1-ndk",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/vendor.qti.qccsyshal_aidl-V1-ndk.so",
+            ],
+            shared_libs: [
+                "libbinder_ndk",
+                "android.hardware.common-V2-ndk",
+                "android.hardware.common.fmq-V1-ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.qccvndhal_aidl-V1-ndk",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/vendor.qti.qccvndhal_aidl-V1-ndk.so",
+            ],
+            shared_libs: [
+                "libbinder_ndk",
+                "android.hardware.common-V2-ndk",
+                "android.hardware.common.fmq-V1-ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
 android_app_import {
     name: "CACertService",
     owner: "motorola",
@@ -16296,6 +16561,17 @@ android_app_import {
     name: "ImsRcsService",
     owner: "motorola",
     apk: "proprietary/system_ext/app/ImsRcsService/ImsRcsService.apk",
+    certificate: "platform",
+    dex_preopt: {
+        enabled: false,
+    },
+    system_ext_specific: true,
+}
+
+android_app_import {
+    name: "QCC",
+    owner: "motorola",
+    apk: "proprietary/system_ext/app/QCC/QCC.apk",
     certificate: "platform",
     dex_preopt: {
         enabled: false,
@@ -17041,6 +17317,37 @@ cc_prebuilt_binary {
                 "libengineplugin",
                 "liblog",
                 "liblocdiagiface",
+                "libutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "garden_app",
+    owner: "motorola",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/garden_app",
+            ],
+            shared_libs: [
+                "libgarden",
+                "libgarden_haltests_e2e",
+                "libgps.utils",
+                "liblocation_api",
+                "libloc_core",
+                "liblog",
                 "libutils",
                 "libc++",
                 "libc",
