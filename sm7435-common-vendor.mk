@@ -922,6 +922,7 @@ PRODUCT_PACKAGES += \
     init.qti.kernel \
     init.qti.media \
     init.qti.qcv \
+    init.qti.write \
     ks \
     loadalgo \
     loc_launcher \

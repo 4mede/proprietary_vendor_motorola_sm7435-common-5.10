@@ -18087,6 +18087,14 @@ sh_binary {
     soc_specific: true,
 }
 
+sh_binary {
+    name: "init.qti.write",
+    owner: "motorola",
+    src: "proprietary/vendor/bin/init.qti.write.sh",
+    filename: "init.qti.write.sh",
+    soc_specific: true,
+}
+
 cc_prebuilt_binary {
     name: "ks",
     owner: "motorola",
