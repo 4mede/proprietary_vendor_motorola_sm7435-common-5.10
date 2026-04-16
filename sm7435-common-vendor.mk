@@ -667,8 +667,8 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.data.latency@1.0 \
     vendor.qti.hardware.data.lce@1.0 \
     vendor.qti.hardware.data.qmi@1.0 \
-    vendor.qti.hardware.dpmservice@1.0 \
-    vendor.qti.hardware.dpmservice@1.1 \
+    vendor.qti.hardware.dpmservice@1.0_vendor \
+    vendor.qti.hardware.dpmservice@1.1_vendor \
     vendor.qti.hardware.dsp@1.0 \
     vendor.qti.hardware.embmssl@1.0 \
     vendor.qti.hardware.embmssl@1.1 \
@@ -826,6 +826,9 @@ PRODUCT_PACKAGES += \
     vendor.qti.ImsRtpService-V1-ndk \
     vendor.qti.diaghal-V1-ndk \
     vendor.qti.diaghal@1.0 \
+    vendor.qti.hardware.dpmaidlservice-V1-ndk \
+    vendor.qti.hardware.dpmservice@1.0 \
+    vendor.qti.hardware.dpmservice@1.1 \
     vendor.qti.hardware.qccsyshal@1.0 \
     vendor.qti.hardware.qccsyshal@1.1 \
     vendor.qti.hardware.qccsyshal@1.2-halimpl \
@@ -852,7 +855,6 @@ PRODUCT_PACKAGES += \
     ims \
     qcrilmsgtunnel \
     WfdCommon \
-    tcmclient \
     uimgbalibrary \
     uimgbamanagerlibrary \
     uimservicelibrary \

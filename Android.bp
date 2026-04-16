@@ -10805,8 +10805,8 @@ cc_prebuilt_library_shared {
                 "libutils",
                 "vendor.libdpmframework",
                 "com.qualcomm.qti.dpm.api@1.0_vendor",
-                "vendor.qti.hardware.dpmservice@1.0",
-                "vendor.qti.hardware.dpmservice@1.1",
+                "vendor.qti.hardware.dpmservice@1.0_vendor",
+                "vendor.qti.hardware.dpmservice@1.1_vendor",
                 "libc++",
                 "libc",
                 "libm",
@@ -10837,7 +10837,7 @@ cc_prebuilt_library_shared {
                 "libutils",
                 "vendor.libdpmframework",
                 "com.qualcomm.qti.dpm.api@1.0_vendor",
-                "vendor.qti.hardware.dpmservice@1.0",
+                "vendor.qti.hardware.dpmservice@1.0_vendor",
                 "libc++",
                 "libc",
                 "libm",
@@ -10872,8 +10872,8 @@ cc_prebuilt_library_shared {
                 "libhardware",
                 "libhardware_legacy",
                 "com.qualcomm.qti.dpm.api@1.0_vendor",
-                "vendor.qti.hardware.dpmservice@1.0",
-                "vendor.qti.hardware.dpmservice@1.1",
+                "vendor.qti.hardware.dpmservice@1.0_vendor",
+                "vendor.qti.hardware.dpmservice@1.1_vendor",
                 "libc++",
                 "libc",
                 "libm",
@@ -10907,7 +10907,7 @@ cc_prebuilt_library_shared {
                 "libhardware_legacy",
                 "vendor.libdpmframework",
                 "com.qualcomm.qti.dpm.api@1.0_vendor",
-                "vendor.qti.hardware.dpmservice@1.0",
+                "vendor.qti.hardware.dpmservice@1.0_vendor",
                 "libc++",
                 "libc",
                 "libm",
@@ -10942,7 +10942,7 @@ cc_prebuilt_library_shared {
                 "libhardware",
                 "libhardware_legacy",
                 "com.qualcomm.qti.dpm.api@1.0_vendor",
-                "vendor.qti.hardware.dpmservice@1.0",
+                "vendor.qti.hardware.dpmservice@1.0_vendor",
                 "vendor.qti.hardware.mwqemadapter@1.0",
                 "libc++",
                 "libc",
@@ -12042,7 +12042,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.dpmservice@1.0",
+    name: "vendor.qti.hardware.dpmservice@1.0_vendor",
+    stem: "vendor.qti.hardware.dpmservice@1.0",
     owner: "motorola",
     strip: {
         none: true,
@@ -12070,7 +12071,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.dpmservice@1.1",
+    name: "vendor.qti.hardware.dpmservice@1.1_vendor",
+    stem: "vendor.qti.hardware.dpmservice@1.1",
     owner: "motorola",
     strip: {
         none: true,
@@ -12081,7 +12083,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/vendor.qti.hardware.dpmservice@1.1.so",
             ],
             shared_libs: [
-                "vendor.qti.hardware.dpmservice@1.0",
+                "vendor.qti.hardware.dpmservice@1.0_vendor",
                 "libhidlbase",
                 "liblog",
                 "libutils",
@@ -16172,6 +16174,88 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.dpmaidlservice-V1-ndk",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/vendor.qti.hardware.dpmaidlservice-V1-ndk.so",
+            ],
+            shared_libs: [
+                "libbinder_ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.dpmservice@1.0",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/vendor.qti.hardware.dpmservice@1.0.so",
+            ],
+            shared_libs: [
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.dpmservice@1.1",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/vendor.qti.hardware.dpmservice@1.1.so",
+            ],
+            shared_libs: [
+                "vendor.qti.hardware.dpmservice@1.0",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "vendor.qti.hardware.qccsyshal@1.0",
     owner: "motorola",
     strip: {
@@ -16655,14 +16739,6 @@ dex_import {
     owner: "motorola",
     jars: [
         "proprietary/system/framework/WfdCommon.jar",
-    ],
-}
-
-dex_import {
-    name: "tcmclient",
-    owner: "motorola",
-    jars: [
-        "proprietary/system/framework/tcmclient.jar",
     ],
 }
 
@@ -19103,8 +19179,8 @@ cc_prebuilt_binary {
                 "libcutils",
                 "libutils",
                 "com.qualcomm.qti.dpm.api@1.0_vendor",
-                "vendor.qti.hardware.dpmservice@1.0",
-                "vendor.qti.hardware.dpmservice@1.1",
+                "vendor.qti.hardware.dpmservice@1.0_vendor",
+                "vendor.qti.hardware.dpmservice@1.1_vendor",
                 "libc++",
                 "libc",
                 "libm",
