@@ -454,6 +454,7 @@ PRODUCT_PACKAGES += \
     libnetmgrxfrmutils \
     libnlnetmgr \
     libops \
+    libos \
     libpal_net_if \
     libpdmapper \
     libpdnotifier \
@@ -561,11 +562,13 @@ PRODUCT_PACKAGES += \
     libssd \
     libsubsystem_control \
     libsynergy_loc_api \
+    libsynx \
     libsys_info_cache \
     libsysmon_cdsp_skel \
     libsystem_health_mon \
     libtestutils \
     libthermalclient \
+    libthreadutils \
     libtime_genoff \
     libtinyxml2_1 \
     libtrustedapploader \
