@@ -275,7 +275,6 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/sm7435-common/proprietary/vendor/gpu/kbc/unified_ksqs.bin:$(TARGET_COPY_OUT_VENDOR)/gpu/kbc/unified_ksqs.bin
 
 PRODUCT_PACKAGES += \
-    libvmmem \
     btaudio_offload_if \
     com.qualcomm.qti.dpm.api@1.0_vendor \
     com.qualcomm.qti.imscmservice@1.0 \
@@ -389,7 +388,6 @@ PRODUCT_PACKAGES += \
     libeva \
     libfastcvdsp_stub \
     libfastcvopt \
-    libgame_enhance \
     libgarden \
     libgarden_haltests_e2e \
     libgdtap \
@@ -574,6 +572,7 @@ PRODUCT_PACKAGES += \
     libtzdrmgenprov \
     libvideotxr \
     libvideoutils \
+    libvmmem \
     libwfdcodecv4l2_proprietary \
     libwfdcommonutils_proprietary \
     libwfdconfigutils_proprietary \
