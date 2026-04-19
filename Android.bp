@@ -18998,6 +18998,30 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_binary {
+    name: "ssgqmigd64",
+    owner: "motorola",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/ssgqmigd64",
+            ],
+            shared_libs: [
+                "liblog",
+                "libm",
+                "libc",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
     name: "ssgtzd",
     owner: "motorola",
     target: {
