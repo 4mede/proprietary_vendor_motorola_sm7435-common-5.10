@@ -339,7 +339,6 @@ PRODUCT_PACKAGES += \
     libadreno_utils \
     libadropbox \
     libadsp_default_listener \
-    libadspd \
     libadsprpc \
     libaualgo_foundation \
     libaudio_log_utils \
