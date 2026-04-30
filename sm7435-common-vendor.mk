@@ -882,6 +882,7 @@ PRODUCT_PACKAGES += \
     android.hardware.security.keymint-service-qti.xml \
     c2_manifest_vendor_audio.xml \
     dataconnection-saidl.xml \
+    manifest_IMoto_Fingerprint.xml \
     manifest_android.hardware.drm@1.4-service.widevine.xml \
     qtiradio-saidl.xml \
     vendor.qti.diag.hal.service.xml \
