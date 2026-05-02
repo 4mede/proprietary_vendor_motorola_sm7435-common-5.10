@@ -388,6 +388,7 @@ PRODUCT_PACKAGES += \
     libeva \
     libfastcvdsp_stub \
     libfastcvopt \
+    libgame_enhance \
     libgarden \
     libgarden_haltests_e2e \
     libgdtap \
