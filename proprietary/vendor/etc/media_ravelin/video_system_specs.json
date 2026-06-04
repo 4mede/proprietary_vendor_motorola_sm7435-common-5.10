@@ -39,15 +39,7 @@
             // Rotating the frame etc
             "vtxr_enable": true,
             // this will enable software I/O chache coherency
-            "sw_cache_coherency": false,
-            // - this enables sw fence for playback usecases.
-            // - this is used for debugging purpose only.
-            // - this requires "debug_private_dec_picture_order"
-            //   to be set to true as well to enable SW fence feature
-            "debug_private_dec_sw_fence": false,
-            // - this enables picture order for playback usecases
-            // - this is used for debugging purpose only.
-            "debug_private_dec_picture_order": false	    
+            "sw_cache_coherency": false
         },
         "Presets": {
             // platform value to force HDR disable. if this value is enabled

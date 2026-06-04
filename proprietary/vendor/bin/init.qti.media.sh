@@ -69,7 +69,7 @@ case "$target" in
         #End, IKSWU-31546
 
         case "$soc_hwid" in
-            568|602|581|582|653|654)
+            568|602|581|582)
                 setprop vendor.media.target_variant "_ravelin"
                 if [ $build_codename -le "14" ]; then
                     setprop vendor.netflix.bsp_rev "Q4450-37037-1"
@@ -84,7 +84,9 @@ case "$target" in
                     setprop vendor.media.target_variant "_parrot_v1"
                 fi
 
-                setprop vendor.netflix.bsp_rev "Q6450-36256-1"
+                if [ $build_codename -le "15" ]; then
+                    setprop vendor.netflix.bsp_rev "Q6450-36256-1"
+                fi
                 ;;
         esac
         ;;
@@ -160,12 +162,6 @@ case "$target" in
                 setprop vendor.media.target_variant "_khaje_v0"
                 if [ $build_codename -le "14" ]; then
                     setprop vendor.netflix.bsp_rev "Q6115-31409-1"
-                fi
-                ;;
-            417|444)
-                setprop vendor.media.target_variant "_bengal_v1"
-                if [ $build_codename -le "14" ]; then
-                    setprop vendor.netflix.bsp_rev "Q4250-31409-1"
                 fi
                 ;;
         esac
