@@ -525,7 +525,6 @@ PRODUCT_PACKAGES += \
     libtzdrmgenprov \
     libvideotxr \
     libvideoutils \
-    libvmmem \
     libwfdcodecv4l2_proprietary \
     libwfdcommonutils_proprietary \
     libwfdconfigutils_proprietary \
