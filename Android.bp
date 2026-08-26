@@ -2833,33 +2833,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libdapparamstorage",
-    owner: "motorola",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libdapparamstorage.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libutils",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libdataitems",
     owner: "motorola",
     strip: {
@@ -14598,42 +14571,6 @@ prebuilt_rfsa {
 }
 
 prebuilt_rfsa {
-    name: "vendor_lib_rfsa_adsp_libSnpeDspV65Skel_so",
-    filename: "libSnpeDspV65Skel.so",
-    owner: "motorola",
-    src: "proprietary/vendor/lib/rfsa/adsp/libSnpeDspV65Skel.so",
-    relative_install_path: "adsp",
-    soc_specific: true,
-}
-
-prebuilt_rfsa {
-    name: "vendor_lib_rfsa_adsp_libSnpeDspV66Skel_so",
-    filename: "libSnpeDspV66Skel.so",
-    owner: "motorola",
-    src: "proprietary/vendor/lib/rfsa/adsp/libSnpeDspV66Skel.so",
-    relative_install_path: "adsp",
-    soc_specific: true,
-}
-
-prebuilt_rfsa {
-    name: "vendor_lib_rfsa_adsp_libSnpeHtpV68Skel_so",
-    filename: "libSnpeHtpV68Skel.so",
-    owner: "motorola",
-    src: "proprietary/vendor/lib/rfsa/adsp/libSnpeHtpV68Skel.so",
-    relative_install_path: "adsp",
-    soc_specific: true,
-}
-
-prebuilt_rfsa {
-    name: "vendor_lib_rfsa_adsp_libSnpeHtpV69Skel_so",
-    filename: "libSnpeHtpV69Skel.so",
-    owner: "motorola",
-    src: "proprietary/vendor/lib/rfsa/adsp/libSnpeHtpV69Skel.so",
-    relative_install_path: "adsp",
-    soc_specific: true,
-}
-
-prebuilt_rfsa {
     name: "vendor_lib_rfsa_adsp_libSnpeHtpV73Skel_so",
     filename: "libSnpeHtpV73Skel.so",
     owner: "motorola",
@@ -19527,34 +19464,4 @@ install_symlink {
     soc_specific: true,
     installed_location: "lib64/libq3dtools_adreno.so",
     symlink_target: "/vendor/lib64/egl/libq3dtools_adreno.so",
-}
-
-filegroup {
-    name: "proprietary_rildb_config_sql_files",
-    srcs: [
-        "proprietary/vendor/etc/qcril_database/upgrade/config/10.0_config.sql",
-        "proprietary/vendor/etc/qcril_database/upgrade/config/11.0_config.sql",
-        "proprietary/vendor/etc/qcril_database/upgrade/config/12.0_config.sql",
-        "proprietary/vendor/etc/qcril_database/upgrade/config/13.0_config.sql",
-        "proprietary/vendor/etc/qcril_database/upgrade/config/6.0_config.sql",
-        "proprietary/vendor/etc/qcril_database/upgrade/config/7.0_config.sql",
-        "proprietary/vendor/etc/qcril_database/upgrade/config/8.0_config.sql",
-        "proprietary/vendor/etc/qcril_database/upgrade/config/9.0_config.sql",
-    ],
-}
-
-filegroup {
-    name: "proprietary_rildb_ecc_sql_files",
-    srcs: [
-        "proprietary/vendor/etc/qcril_database/upgrade/ecc/mot_generated_ecc_qcrildb.sql",
-    ],
-}
-
-filegroup {
-    name: "proprietary_rildb_other_sql_files",
-    srcs: [
-        "proprietary/vendor/etc/qcril_database/upgrade/other/2_version_add_wps_config_qcrilnr.sql",
-        "proprietary/vendor/etc/qcril_database/upgrade/other/3_version_update_wps_config_qcrilnr.sql",
-        "proprietary/vendor/etc/qcril_database/upgrade/other/6_version_change_property_table_qcrilnr.sql",
-    ],
 }
