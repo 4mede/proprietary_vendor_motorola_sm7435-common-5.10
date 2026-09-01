@@ -16,7 +16,6 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/sm7435-common/proprietary/system_ext/etc/init/dpmd.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/dpmd.rc \
     vendor/motorola/sm7435-common/proprietary/system_ext/etc/init/qspa_system.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/qspa_system.rc \
     vendor/motorola/sm7435-common/proprietary/system_ext/etc/init/vendor.qti.hardware.qccsyshal@1.2-service.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/vendor.qti.hardware.qccsyshal@1.2-service.rc \
-    vendor/motorola/sm7435-common/proprietary/system_ext/etc/init/wfdservice.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/wfdservice.rc \
     vendor/motorola/sm7435-common/proprietary/system_ext/etc/permissions/com.qti.dpmframework.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.qti.dpmframework.xml \
     vendor/motorola/sm7435-common/proprietary/system_ext/etc/permissions/com.qti.qcc.vendor_qcc.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.qti.qcc.vendor_qcc.xml \
     vendor/motorola/sm7435-common/proprietary/system_ext/etc/permissions/dpmapi.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/dpmapi.xml \
@@ -26,13 +25,10 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/sm7435-common/proprietary/system_ext/etc/permissions/qti_permissions.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/qti_permissions.xml \
     vendor/motorola/sm7435-common/proprietary/system_ext/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml \
     vendor/motorola/sm7435-common/proprietary/system_ext/etc/permissions/vendor.qti.ims.rcsservice.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/vendor.qti.ims.rcsservice.xml \
-    vendor/motorola/sm7435-common/proprietary/system_ext/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml \
     vendor/motorola/sm7435-common/proprietary/system_ext/etc/public.libraries-qti.txt:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/public.libraries-qti.txt \
     vendor/motorola/sm7435-common/proprietary/system_ext/etc/qspa/qspa_default.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/qspa/qspa_default.rc \
-    vendor/motorola/sm7435-common/proprietary/system_ext/etc/seccomp_policy/wfdservice64.policy:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/seccomp_policy/wfdservice64.policy \
     vendor/motorola/sm7435-common/proprietary/system_ext/etc/sysconfig/qti_telephony_system_packages_config.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/qti_telephony_system_packages_config.xml \
     vendor/motorola/sm7435-common/proprietary/system_ext/etc/sysconfig/qti_whitelist_system_ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/qti_whitelist_system_ext.xml \
-    vendor/motorola/sm7435-common/proprietary/system_ext/etc/wfdconfigsink.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/wfdconfigsink.xml \
     vendor/motorola/sm7435-common/proprietary/vendor/etc/ArmHDCP_QTI_Android.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/ArmHDCP_QTI_Android.cfg \
     vendor/motorola/sm7435-common/proprietary/vendor/etc/ap_gain.bin:$(TARGET_COPY_OUT_VENDOR)/etc/ap_gain.bin \
     vendor/motorola/sm7435-common/proprietary/vendor/etc/ap_gain_mmul.bin:$(TARGET_COPY_OUT_VENDOR)/etc/ap_gain_mmul.bin \
@@ -648,7 +644,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.dpmservice@1.0_vendor \
     vendor.qti.hardware.dpmservice@1.1_vendor \
     vendor.qti.hardware.dsp@1.0 \
-    vendor.qti.hardware.fm@1.0 \
+    vendor.qti.hardware.fm@1.0_vendor \
     vendor.qti.hardware.mwqemadapter@1.0 \
     vendor.qti.hardware.qccsyshal@1.0_vendor \
     vendor.qti.hardware.qccsyshal@1.1_vendor \
@@ -759,6 +755,7 @@ PRODUCT_PACKAGES += \
     vendor_lib_rfsa_adsp_libsw2dlut_dsp_skel_so \
     vendor_lib_rfsa_adsp_libworker_pool_so \
     com.qualcomm.qti.dpm.api@1.0 \
+    fm_helium \
     lib-imsvideocodec \
     lib-imsvt \
     lib-imsvtextutils \
@@ -768,33 +765,15 @@ PRODUCT_PACKAGES += \
     libdpmfdmgr \
     libdpmframework \
     libdpmtcm \
+    libfm-hci \
     libimscamera_jni \
     libimsmedia_jni \
     libmmosal \
     libmmparser_lite \
-    libmmrtpdecoder \
-    libmmrtpencoder \
     libqcc \
     libqcc_file_agent_sys \
     libqccdme \
     libqccfileservice \
-    libwfdavenhancements \
-    libwfdclient \
-    libwfdcommonutils \
-    libwfdconfigutils \
-    libwfddisplayconfig \
-    libwfdmminterface \
-    libwfdmmsink \
-    libwfdmmsrc_system \
-    libwfdnative \
-    libwfdrtsp \
-    libwfdservice \
-    libwfdsinksm \
-    libwfduibcinterface \
-    libwfduibcsink \
-    libwfduibcsinkinterface \
-    libwfduibcsrc \
-    libwfduibcsrcinterface \
     vendor.qti.ImsRtpService-V1-ndk \
     vendor.qti.ImsRtpService-V2-ndk \
     vendor.qti.diaghal-V1-ndk \
@@ -802,13 +781,13 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.dpmaidlservice-V1-ndk \
     vendor.qti.hardware.dpmservice@1.0 \
     vendor.qti.hardware.dpmservice@1.1 \
+    vendor.qti.hardware.fm-V1-ndk \
+    vendor.qti.hardware.fm@1.0 \
     vendor.qti.hardware.qccsyshal@1.0 \
     vendor.qti.hardware.qccsyshal@1.1 \
     vendor.qti.hardware.qccsyshal@1.2-halimpl \
     vendor.qti.hardware.qccsyshal@1.2 \
     vendor.qti.hardware.qccvndhal@1.0 \
-    vendor.qti.hardware.wifidisplaysession@1.0 \
-    vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk \
     vendor.qti.imsrtpservice@3.0 \
     vendor.qti.imsrtpservice@3.1 \
     vendor.qti.qccsyshal_aidl-V1-ndk \
@@ -823,11 +802,9 @@ PRODUCT_PACKAGES += \
     QCC \
     QtiTelephonyService \
     QtiTelephony \
-    WfdService \
     dpmserviceapp \
     ims \
     qcrilmsgtunnel \
-    WfdCommon \
     uimgbalibrary \
     uimgbamanagerlibrary \
     uimservicelibrary \
@@ -943,17 +920,12 @@ PRODUCT_PACKAGES += \
     wifidisplayhalservice \
     xtra-daemon \
     dpmd \
-    qccsyshal@1.2-service \
-    wfdservice64
+    qccsyshal@1.2-service
 
 PRODUCT_PACKAGES += \
     system_ext_priv-app_ims_lib_arm64_libimscamera_jni_so \
     system_ext_priv-app_ims_lib_arm64_libimsmedia_jni_so \
-    system_ext_priv-app_WfdService_lib_arm64_libwfdnative_so \
     vendor_bin_expat \
     vendor_lib64_libEGL_adreno_so \
     vendor_lib64_libGLESv2_adreno_so \
     vendor_lib64_libq3dtools_adreno_so
-
-PRODUCT_BOOT_JARS += \
-    WfdCommon
